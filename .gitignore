@@ -1,3 +1,3 @@
 
-var/www/local.m242/docker/db/data/
-var/www/local.m242/src/vendor
+src/var/www/local.m242/docker/db/data/
+src/var/www/local.m242/src/vendor
