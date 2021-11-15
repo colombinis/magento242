@@ -17,11 +17,13 @@ class SearchCriteriaResolver
     public function afterResolve(MagentoSearchCriteriaResolver $subject, SearchCriteria $result): SearchCriteria
     {
         $sortOrders = $result->getSortOrders();
-
-        $sortOrders=[
-            'seba_color' => "ASC",
-            'entity_id' => "DESC"
-        ];
+        if(isset($sortOrders['position'])){
+            unset($sortOrders['position']);
+        }
+        // $sortOrders=[
+        //     'seba_color' => "ASC",
+        //     'entity_id' => "DESC"
+        // ];
         $result->setSortOrders($sortOrders);
 
         return $result;
