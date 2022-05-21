@@ -6,7 +6,7 @@ services:
     image: mysql
     volumes:
       - $PWD/docker/db/scripts/:/docker-entrypoint-initdb.d
-      - $PWD/docker/db/data:/var/lib/mysql
+      - dbdata-m242:/var/lib/mysql
     command: --default-authentication-plugin=mysql_native_password
 
     environment:
@@ -61,5 +61,5 @@ services:
 
 volumes:
   redisinsight:
-#   dbdata:
+  dbdata-m242:
 #   rabbitmqdata:
