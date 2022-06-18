@@ -45,6 +45,8 @@ services:
   elasticsearch:
     build:
       context: $PWD/docker/elasticsearch/.
+    volumes:
+      - esdata01-m242:/usr/share/elasticsearch/data
     ports:
       - "9200:9200"
       - "9300:9300"
@@ -60,6 +62,7 @@ services:
       - "6379:6379"
 
 volumes:
-  redisinsight:
+  esdata01-m242:
   dbdata-m242:
-#   rabbitmqdata:
+# redis-m242:
+# rabbitmqdata:
