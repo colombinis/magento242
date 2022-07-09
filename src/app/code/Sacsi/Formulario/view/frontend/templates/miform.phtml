@@ -1,0 +1,127 @@
+<?php
+
+?>
+
+
+
+<script type="text/x-magento-init">
+  debugger;
+</script>
+
+
+<h1>Probando js...</h1>
+
+<h2>Componente con alias hello</h2>
+<div id="componente-hello" data-mage-init='{"hello":{"message":"Hola desde un sript"}}'>
+    Contenido hello con alias
+</div>
+
+<h2>Componente hello sin alias</h2>
+<div id="componente2" data-mage-init='{"Sacsi_Formulario/js/hello":{"message":"Hola desde otro div sript"}}'>
+    Contenido hello sin alias
+</div>
+
+
+<h2>mi modulo1</h2>
+<div id="mimodulo1" data-mage-init='{"Sacsi_Formulario/js/mimodulo1":{"message":"Hola desde modulo 1"}}'>
+    Contenido mimodulo1
+</div>
+
+
+<h2>mi modulo2</h2>
+<div id="mi2" data-mage-init='{"Sacsi_Formulario/js/grupo2/mimodulo2":{"message":"Hola ..."}}'>
+    Contenido mimodulo 2
+</div>
+
+<h2>mi widget</h2>
+<div id="miwidget1" class="selector" data-mage-init='{"Sacsi_Formulario/js/widgets/miwidget1":{
+                                                        "items":{
+                                                                    "optionOne":"value 1",
+                                                                    "optionTwo":"value 2",
+                                                                    "optionThree":"value 3"
+                                                                }
+                                                        }
+                                                    }'>
+    Contenido widgets ???
+</div>
+
+<hr>
+<h2>widgets de magento</h2>
+<a href="https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget-popup-window.html"> Ver lista de widgets</a>
+<hr>
+<h2>Dropdown</h2>
+<style>
+    .customer-welcome .dropdown-options{
+        display: none;
+    }
+    .customer-welcome.active .dropdown-options{
+        display: block;
+    }
+
+</style>
+<div class="customer-welcome">
+    <button
+        data-mage-init='{"dropdown":{}}'
+        data-toggle="dropdown"
+        class="action"
+        data-action="customer-menu-toggle">
+            <span><?= $block->escapeHtml(__('Dropdown open button')) ?></span>
+    </button>
+    <ul data-target="dropdown" class="dropdown-options">
+        <li>
+            <span class="item"><?= $block->escapeHtml(__('Item 1')) ?></span>
+        </li>
+        <li>
+            <span class="item"><a href="#"><?= $block->escapeHtml(__('Item 2 with link')) ?></a></span>
+        </li>
+        <li>
+            <span class="item"><?= $block->escapeHtml(__('Item 3')) ?></span>
+        </li>
+    </ul>
+</div>
+
+<hr>
+<h2>PopupWindow</h2>
+<a href="#" class="action" title="Open Customer Login"
+   data-mage-init='{"popupWindow": {
+        "windowURL": "/customer/account/login",
+        "windowName": "customer-login",
+        "width": 400,
+        "height": 400,
+        "left": 0,
+        "top": 0,
+        "resizable": 1,
+        "scrollbars": 1,
+        "status": 1,
+        "menubar": 1
+    }}'>
+    <span>Open Customer Login</span>
+</a>
+
+<hr>
+<h2>PopupWindow</h2>
+<h6>Note js initialization</h6>
+
+<div class="field">
+    <label>Date : </label>
+    <input type="text" class="input-text" id="example-date" style="width: auto" name="example-date" />
+</div>
+
+
+<script>
+    console.log('2do comun script');
+  require([
+    'jquery',
+    'mage/translate',
+    'mage/calendar'
+    ], function ($, $t) {
+      $('#example-date').calendar({
+        changeMonth: true,
+        changeYear: true,
+        showButtonPanel: true,
+        currentText: $t('Go Today'),
+        closeText: $t('Close'),
+        showWeek: true
+      });
+    })
+</script>
