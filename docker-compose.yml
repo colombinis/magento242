@@ -26,6 +26,8 @@ services:
       - $PWD/docker/web/php/php.ini:/usr/local/etc/php/php.ini
     ports:
       - "80:80"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
   phpmyadmin:
     container_name: m242_phpmyadmin
@@ -59,7 +61,7 @@ services:
     ports:
       - "6379:6379"
 
-volumes:
-  redisinsight:
+#volumes:
+#   redisinsight:
 #   dbdata:
 #   rabbitmqdata:
