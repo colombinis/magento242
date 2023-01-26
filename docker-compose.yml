@@ -63,15 +63,7 @@ services:
     ports:
       - "6379:6379"
 
-<<<<<<< HEAD
-#volumes:
-#   redisinsight:
-#   dbdata:
-#   rabbitmqdata:
-=======
+
 volumes:
   esdata01-m242:
   dbdata-m242:
-# redis-m242:
-# rabbitmqdata:
->>>>>>> 47538149da15f4c7f8b8f8dc652a608eb791125e

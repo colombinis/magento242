@@ -22,11 +22,11 @@
             "name": "Launch currently open script",
             "type": "php",
             "request": "launch",
-            "program": "/var/www/bin/magento",
+            "program": "/var/www/html/bin/magento",
             "cwd": "${fileDirname}",
-            "port": 9009,
+            "port": 9000,
             "pathMappings": {
-                "/var/www": "${workspaceRoot}/",
+                "/var/www/html": "${workspaceRoot}/src",
             },
             "xdebugSettings": {
                 "max_children": 10000,
