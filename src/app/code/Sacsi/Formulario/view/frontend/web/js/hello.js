@@ -3,7 +3,7 @@ define([
 ], function($){
         "use strict";
         return function(config, element) {
-            //debugger;
+            debugger;
             //alert(config.message);
             element.innerText = 'carga modulo hello, en div.id -> ' + element.id ;
         }

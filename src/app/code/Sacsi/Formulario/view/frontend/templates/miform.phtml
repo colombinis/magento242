@@ -4,9 +4,9 @@
 
 
 
-<script type="text/x-magento-init">
+<!-- <script type="text/x-magento-init">
   debugger;
-</script>
+</script> -->
 
 
 <h1>Probando js...</h1>
@@ -124,4 +124,38 @@
         showWeek: true
       });
     })
+</script>
+
+<hr>
+<h2>Accordion widget</h2>
+<h6>Note js initialization</h6>
+<div id="element">
+    <div data-role="collapsible">
+        <div data-role="trigger">
+            <span>Title 1</span>
+        </div>
+    </div>
+    <div data-role="content">Content 1</div>
+
+    <div data-role="collapsible">
+        <div data-role="trigger">
+            <span>Title 2</span>
+        </div>
+    </div>
+    <div data-role="content">Content 2</div>
+
+    <div data-role="collapsible">
+        <div data-role="trigger">
+            <span>Title 3</span>
+        </div>
+    </div>
+    <div data-role="content">Content 3</div>
+</div>
+
+<script>
+    require([
+        'jquery',
+        'accordion'], function ($) {
+        $("#element").accordion();
+    });
 </script>
