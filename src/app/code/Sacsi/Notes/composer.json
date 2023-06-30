@@ -1,0 +1,14 @@
+{
+    "name": "sacsi/module-notes",
+    "description": "N/A",
+    "type": "magento2-module",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Sacsi\\Notes\\": ""
+        }
+    }
+}
+
