@@ -321,6 +321,7 @@ return [
         'Klarna_KpGraphQl' => 1,
         'PayPal_Braintree' => 1,
         'PayPal_BraintreeGraphQl' => 1,
+        'Sacsi_Checkout' => 1,
         'Sacsi_Newtabcustomer' => 1,
         'Temando_ShippingRemover' => 1,
         'Vertex_Tax' => 1,
