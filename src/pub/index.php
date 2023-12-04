@@ -1,5 +1,4 @@
 <?php
-$debug=1;
 /**
  * Public alias for the application entry point
  *
@@ -21,6 +20,7 @@ try {
     <p>{$e->getMessage()}</p>
 </div>
 HTML;
+    http_response_code(500);
     exit(1);
 }
 

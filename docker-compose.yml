@@ -14,6 +14,7 @@ services:
       MYSQL_DATABASE: magento_242
     ports:
       - "3306:3306"
+      
   web:
     container_name: m242_web
     depends_on:
@@ -26,6 +27,8 @@ services:
       - $PWD/docker/web/php/php.ini:/usr/local/etc/php/php.ini
     ports:
       - "80:80"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
   phpmyadmin:
     container_name: m242_phpmyadmin

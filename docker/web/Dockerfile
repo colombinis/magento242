@@ -1,4 +1,4 @@
-FROM php:7.4-apache
+FROM php:8.1-apache
 
 RUN apt-get update \
 && apt-get install -y apt-utils vim curl sqlite3 mc \
@@ -70,7 +70,7 @@ RUN apt-get update && \
 
 RUN chmod 777 -R /var/www \
     && chown -R www-data:www-data /var/www \
-    && usermod -u 1000 www-data \
+    && usermod -u 1001 www-data \
     && chsh -s /bin/bash www-data
 
 RUN a2enmod rewrite
@@ -102,6 +102,7 @@ RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
 #     mv composer.phar /usr/local/bin/composer
 COPY ./php/composer /usr/local/bin/composer
 COPY ./php/wp /usr/local/bin/wp
+COPY ./php/n98-magerun2 /usr/local/bin/n98-magerun2
 
 ###################
 # APACHE

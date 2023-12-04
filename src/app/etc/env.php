@@ -3,6 +3,32 @@ return [
     'backend' => [
         'frontName' => 'admin'
     ],
+    'cache' => [
+        'graphql' => [
+            'id_salt' => 'evlKhVHvAhODCUWpAHwmdGQtMUabwz8t'
+        ],
+        'frontend' => [
+            'default' => [
+                'id_prefix' => '706_',
+                'backend' => 'Cm_Cache_Backend_Redis',
+                'backend_options' => [
+                    'server' => 'redis',
+                    'database' => '1',
+                    'port' => '6379'
+                ]
+            ],
+            'page_cache' => [
+                'id_prefix' => '706_',
+                'backend' => 'Cm_Cache_Backend_Redis',
+                'backend_options' => [
+                    'server' => 'redis',
+                    'database' => '0',
+                    'port' => '6379'
+                ]
+            ]
+        ],
+        'allow_parallel_generation' => false
+    ],
     'remote_storage' => [
         'driver' => 'file'
     ],
@@ -38,23 +64,18 @@ return [
     'x-frame-options' => 'SAMEORIGIN',
     'MAGE_MODE' => 'developer',
     'session' => [
-        'save' => 'files'
-    ],
-    'cache' => [
-        'frontend' => [
-            'default' => [
-                'id_prefix' => 'bbd_'
-            ],
-            'page_cache' => [
-                'id_prefix' => 'bbd_'
-            ]
-        ],
-        'allow_parallel_generation' => false
+        'save' => 'redis',
+        'redis' => [
+            'host' => 'redis',
+            'port' => '6379',
+            'database' => '2',
+            'compression_library' => 'gzip'
+        ]
     ],
     'lock' => [
         'provider' => 'db',
         'config' => [
-            'prefix' => ''
+            'prefix' => '4eca503af33be381f49207d24a011fc6'
         ]
     ],
     'directories' => [
@@ -62,7 +83,7 @@ return [
     ],
     'cache_types' => [
         'config' => 1,
-        'layout' => 0,
+        'layout' => 1,
         'block_html' => 1,
         'collections' => 1,
         'reflection' => 1,
@@ -72,15 +93,14 @@ return [
         'customer_notification' => 1,
         'config_integration' => 1,
         'config_integration_api' => 1,
-        'full_page' => 0,
+        'full_page' => 1,
         'config_webservice' => 1,
-        'translate' => 1,
-        'vertex' => 1
+        'translate' => 1
     ],
     'downloadable_domains' => [
         'local.m242'
     ],
     'install' => [
-        'date' => 'Fri, 01 Oct 2021 09:01:58 +0000'
+        'date' => 'Fri, 10 Nov 2023 18:26:42 +0000'
     ]
 ];
